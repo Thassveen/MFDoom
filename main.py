@@ -14,6 +14,7 @@ pygame.display.set_caption("MFDoom")
 clock = pygame.time.Clock() 
 FPS = 60 
  
+
 #load bg image 
 bg_image = pygame.image.load("assets/images/background/background.jpg").convert_alpha() 
  
@@ -21,9 +22,9 @@ bg_image = pygame.image.load("assets/images/background/background.jpg").convert_
 def draw_bg(): 
     scaled_bg = pygame.transform.scale(bg_image, (SCREEN_WIDTH,SCREEN_HEIGHT)) 
     screen.blit(scaled_bg, (0,0)) 
- 
- 
-#create two  of fighters 
+    
+
+#create two instances of fighters 
 fighter_1 = Fighter(200,310)     
 fighter_2 = Fighter(700,310)  
  
@@ -33,13 +34,14 @@ while run:
      
     clock.tick(FPS) 
  
-    #draw bg 
+    #draw backgrounnd 
     draw_bg() 
- 
+
+    
     #move fighters 
-    fighter_1.move(SCREEN_WIDTH,SCREEN_HEIGHT) 
-    fighter_2.move(SCREEN_WIDTH,SCREEN_HEIGHT) 
- 
+    fighter_1.move(SCREEN_WIDTH,SCREEN_HEIGHT, screen, fighter_2) 
+    fighter_2.move(SCREEN_WIDTH,SCREEN_HEIGHT, screen, fighter_1)
+
     #draw fighters 
     fighter_1.draw(screen) 
     fighter_2.draw(screen) 
