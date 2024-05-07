@@ -27,7 +27,13 @@ class Fighter():
          self.vel_y = -30 
          self.jump = True 
       #attack 
-      if key[pygame.K_r] or key[pygame.K_t]: 
+      if key[pygame.K_r] or key[pygame.K_t]:
+
+         #determine which attack type was used
+         if key[pygame.K_r]:
+            self.attack_type = 1
+         if self.key[pygame.K_t]:
+            self.attack_type = 2
          
          #determine which attack type was used  
          if key[pygame.K_r] : 
@@ -56,7 +62,7 @@ class Fighter():
  
  
      def attack(self): 
-        pass 
+        pass
       
  
      def draw(self, surface): 

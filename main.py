@@ -25,7 +25,7 @@ def draw_bg():
  
 #create two  of fighters 
 fighter_1 = Fighter(200,310)     
-#fighter_2 = Fighter(700,310)  
+fighter_2 = Fighter(700,310)  
  
 #game loop 
 run = True 
@@ -38,11 +38,11 @@ while run:
  
     #move fighters 
     fighter_1.move(SCREEN_WIDTH,SCREEN_HEIGHT) 
-    #fighter_2.move() 
+    fighter_2.move(SCREEN_WIDTH,SCREEN_HEIGHT) 
  
     #draw fighters 
     fighter_1.draw(screen) 
-    #fighter_2.draw(screen) 
+    fighter_2.draw(screen) 
  
     #event handler 
     for event in pygame.event.get(): 
